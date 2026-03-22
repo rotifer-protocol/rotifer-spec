@@ -1,0 +1,2 @@
+# ADR-106 L4a: prevent internal/ cross-contamination
+internal/
