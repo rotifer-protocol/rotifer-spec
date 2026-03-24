@@ -1,6 +1,9 @@
 # ADR-106 L4a: prevent internal/ cross-contamination
 internal/
 
+# OS
+.DS_Store
+
 # Environment & secrets
 .env
 .env.*
