@@ -3,7 +3,7 @@
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY_SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Status: Frozen](https://img.shields.io/badge/Status-Frozen-blue.svg)]()
 
-The Rotifer Protocol is a **universal evolution framework for autonomous software agents**. It defines how software "genes" — discrete, composable units of capability — are discovered, composed, executed, evaluated, and evolved through competitive natural selection in an Arena environment.
+The Rotifer Protocol is a **universal evolution framework for AI agents**. It defines how software "genes" — discrete, composable units of capability — are discovered, composed, executed, evaluated, and evolved through competitive natural selection in an Arena environment.
 
 ## Core Concepts
 

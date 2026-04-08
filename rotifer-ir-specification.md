@@ -7,7 +7,7 @@
 **Version:** 0.2.0
 **Prerequisite:** [Rotifer Protocol Specification](./rotifer-protocol-specification.md)
 
-> **Stability Warning:** The cross-binding interop protocol (§10) has been partially validated by two binding implementations (LocalBinding + Web3MockBinding) in v0.6.5. Host function classification (§6) and Capability Negotiation (§10.5) may change based on real integration feedback from non-mock bindings. IR 1.0 will be declared after at least two *production* binding environments pass cross-binding interop tests and one round of external developer RFC feedback is completed.
+> **Stability Warning:** The cross-binding interop protocol (§10) has been partially validated by two binding implementations (LocalBinding + Web3MockBinding) in v0.6.5. Host function classification (§6) and Capability Negotiation (§10.5) may change based on real integration feedback from non-mock bindings. IR 1.0 will be declared after at least two *production* binding environments pass cross-binding interop tests and one round of external contributor RFC feedback is completed.
 
 ---
 
@@ -986,7 +986,7 @@ This document defines IR Specification version **0.2.0**. Per §11.1 rules, majo
 Prerequisites for IR 1.0 release:
 1. At least two *production* (non-mock) binding environments pass cross-binding interop tests
 2. Host function classification (§6 required/optional) validated through real integration
-3. At least one round of external developer RFC feedback completed
+3. At least one round of external contributor RFC feedback completed
 
 ### 11.3 Deprecation Policy
 

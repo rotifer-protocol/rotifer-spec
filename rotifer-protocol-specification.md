@@ -1,6 +1,6 @@
 # Rotifer Protocol Specification
 
-## Universal Evolution Framework for Autonomous Software Agents
+## Universal Evolution Framework for AI Agents
 
 **Author:** Rotifer Foundation
 
@@ -28,7 +28,7 @@ This specification maps these biological mechanisms to three core software engin
 
 ## 1. Problem Statement
 
-Three systemic challenges exist in building and managing large-scale autonomous software agents:
+Three systemic challenges exist in building and managing large-scale AI agents:
 
 ### 1.1 Fragility of Static Logic
 
