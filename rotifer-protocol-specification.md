@@ -1,6 +1,6 @@
 # Rotifer Protocol Specification
 
-## Universal Evolution Framework for AI Agents
+## Open-source evolution framework for AI agents
 
 **Author:** Rotifer Foundation
 
