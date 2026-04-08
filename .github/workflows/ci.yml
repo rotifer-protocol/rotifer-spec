@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: Secrets Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cross-contamination:
+    name: Cross-Contamination Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 0
+      - name: Scan for private file paths
+        run: |
+          CONTAMINATED=$(git log --all --diff-filter=A --name-only --format="" | grep "^internal/" | sort -u || true)
+          if [ -n "$CONTAMINATED" ]; then
+            echo "::error::⛔ CRITICAL: private files found in commit history!"
+            echo "$CONTAMINATED"
+            exit 1
+          fi
+          echo "✅ No contamination detected"
