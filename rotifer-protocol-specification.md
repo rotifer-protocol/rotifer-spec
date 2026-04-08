@@ -10,7 +10,7 @@
 
 Autonomous software agents are becoming core building blocks of distributed systems. Yet current agent architectures face a fundamental contradiction: **we are using static engineering methodologies to manage systems that inherently require dynamic evolutionary capabilities.** Once deployed, agent logic is frozen — adaptation to environmental changes depends entirely on manual intervention. Individual learning cannot efficiently propagate as collective intelligence. Failed experiences are discarded rather than transformed into collective defenses.
 
-The **Rotifer Protocol** distills a universal software evolution framework from the survival strategies of nature's most resilient micro-animal — the **Bdelloid Rotifer**. These organisms have maintained genetic diversity and extreme environmental survival across 40 million years of asexual reproduction through three unique mechanisms:
+The **Rotifer Protocol** distills an open-source evolution framework from the survival strategies of nature's most resilient micro-animal — the **Bdelloid Rotifer**. These organisms have maintained genetic diversity and extreme environmental survival across 40 million years of asexual reproduction through three unique mechanisms:
 
 1. **Cryptobiosis:** Expelling 95% of body water to enter dormancy under extreme conditions, reviving decades later upon rehydration.
 2. **Horizontal Gene Transfer (HGT):** Acquiring genetic material from other species (including fungi and bacteria) to achieve cross-species capability leaps.
