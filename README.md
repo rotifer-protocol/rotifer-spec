@@ -39,6 +39,16 @@ L0 ── Kernel ── Genetic Code
 | [**rotifer-playground**](https://github.com/rotifer-protocol/rotifer-playground) | CLI tool for gene development, Arena competition, protocol simulation |
 | [**rotifer-papers**](https://github.com/rotifer-protocol/rotifer-papers) | Published articles and philosophy whitepaper |
 
+## Active RFCs (Community Review)
+
+Open Requests for Comments awaiting community feedback. Each RFC has a 14-day public review period before consensus is assessed.
+
+| # | Title | Status | Discussion |
+|---|-------|--------|------------|
+| **001** | Rotifer Protocol Economic System (v0.9) | 🟢 Open (2026-05-22 → 2026-06-05) | [Issue #2](https://github.com/rotifer-protocol/rotifer-spec/issues/2) |
+
+To participate: comment on the linked issue, citing the relevant question number (e.g., `Re: Q4 [N]`). All contributions follow the [DCO sign-off requirement](./CONTRIBUTING.md#developer-certificate-of-origin-dco).
+
 ## Contributing
 
 The specification is open under CC BY-SA 4.0. To propose changes:
@@ -46,6 +56,7 @@ The specification is open under CC BY-SA 4.0. To propose changes:
 1. Read the current specification thoroughly
 2. File an issue describing the motivation and proposed change
 3. Reference relevant ADRs from [public ADRs](https://github.com/rotifer-protocol/rotifer-playground/blob/main/docs/architecture-decisions.md)
+4. For protocol-level changes, see if an RFC is required (see [Active RFCs](#active-rfcs-community-review) above)
 
 ## License
 
