@@ -42,3 +42,42 @@ jobs:
             exit 1
           fi
           echo "✅ No contamination detected"
+
+  broken-links:
+    name: Broken Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      # Self-contained relative-link checker: validates repo-local markdown
+      # links resolve to existing files. Offline only (no external URL pings,
+      # avoids network flakiness). No third-party action / no private-repo
+      # dependency. Linear regex (negated char classes only) — ReDoS-safe.
+      - name: Check relative markdown links (offline, repo-local only)
+        run: |
+          python3 - <<'PY'
+          import re, sys, pathlib
+          from urllib.parse import unquote
+          INLINE = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
+          SCHEME = re.compile(r'^[a-zA-Z][a-zA-Z0-9+.-]*:')
+          SKIP = {'.git', 'node_modules'}
+          broken, scanned = [], 0
+          for md in pathlib.Path('.').rglob('*.md'):
+              if any(p in SKIP for p in md.parts):
+                  continue
+              scanned += 1
+              text = md.read_text(encoding='utf-8', errors='replace')
+              for m in INLINE.finditer(text):
+                  raw = m.group(1).strip()
+                  target = (raw.split()[0] if raw else '').split('#', 1)[0]
+                  if not target or target.startswith('#') or SCHEME.match(target):
+                      continue
+                  if not (md.parent / unquote(target)).exists():
+                      broken.append(f"{md}: {raw}")
+          print(f"scanned {scanned} markdown files")
+          if broken:
+              print("::error::Broken relative links found:")
+              for b in broken:
+                  print(b)
+              sys.exit(1)
+          print("✅ No broken relative links")
+          PY
