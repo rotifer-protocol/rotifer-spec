@@ -45,7 +45,7 @@ Open Requests for Comments awaiting community feedback. Each RFC has a 14-day pu
 
 | # | Title | Status | Discussion |
 |---|-------|--------|------------|
-| **001** | Rotifer Protocol Economic System (v0.9) | 🟢 Open (2026-05-22 → 2026-06-05) | [Issue #2](https://github.com/rotifer-protocol/rotifer-spec/issues/2) |
+| **001** | Rotifer Protocol Economic System (v0.9) | ✅ Accepted (2026-06-05, lazy consensus) — design enters Spec Change Backlog for v1.x | [Issue #2](https://github.com/rotifer-protocol/rotifer-spec/issues/2) |
 
 To participate: comment on the linked issue, citing the relevant question number (e.g., `Re: Q4 [N]`). All contributions follow the [DCO sign-off requirement](./CONTRIBUTING.md#developer-certificate-of-origin-dco).
 
