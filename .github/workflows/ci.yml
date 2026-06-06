@@ -52,6 +52,8 @@ jobs:
       # links resolve to existing files. Offline only (no external URL pings,
       # avoids network flakiness). No third-party action / no private-repo
       # dependency. Linear regex (negated char classes only) — ReDoS-safe.
+      # Skips fenced code blocks (``` / ~~~) and absolute site routes (/...)
+      # which an offline filesystem check cannot resolve.
       - name: Check relative markdown links (offline, repo-local only)
         run: |
           python3 - <<'PY'
@@ -59,20 +61,28 @@ jobs:
           from urllib.parse import unquote
           INLINE = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
           SCHEME = re.compile(r'^[a-zA-Z][a-zA-Z0-9+.-]*:')
+          FENCE = re.compile(r'^\s*(```|~~~)')
           SKIP = {'.git', 'node_modules'}
           broken, scanned = [], 0
           for md in pathlib.Path('.').rglob('*.md'):
               if any(p in SKIP for p in md.parts):
                   continue
               scanned += 1
-              text = md.read_text(encoding='utf-8', errors='replace')
-              for m in INLINE.finditer(text):
-                  raw = m.group(1).strip()
-                  target = (raw.split()[0] if raw else '').split('#', 1)[0]
-                  if not target or target.startswith('#') or SCHEME.match(target):
+              in_fence = False
+              for line in md.read_text(encoding='utf-8', errors='replace').splitlines():
+                  if FENCE.match(line):
+                      in_fence = not in_fence
                       continue
-                  if not (md.parent / unquote(target)).exists():
-                      broken.append(f"{md}: {raw}")
+                  if in_fence:
+                      continue
+                  for m in INLINE.finditer(line):
+                      raw = m.group(1).strip()
+                      target = (raw.split()[0] if raw else '').split('#', 1)[0]
+                      if (not target or target.startswith('#')
+                              or target.startswith('/') or SCHEME.match(target)):
+                          continue
+                      if not (md.parent / unquote(target)).exists():
+                          broken.append(f"{md}: {raw}")
           print(f"scanned {scanned} markdown files")
           if broken:
               print("::error::Broken relative links found:")
