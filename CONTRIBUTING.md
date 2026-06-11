@@ -87,6 +87,4 @@ By contributing, you agree that your contributions will be licensed under
 **CC BY-SA 4.0** — see [`LICENSE`](./LICENSE) for the full text.
 
 For AGPL+dual repositories: commercial licensing inquiries go to
-`dev@rotifer.dev` — see the
-[commercial license template](https://github.com/rotifer-protocol/internal/blob/main/strategy/governance/commercial-license-template.md)
-(internal reference) for the structure of such agreements.
+`dev@rotifer.dev`, who can provide the commercial license template and terms.
