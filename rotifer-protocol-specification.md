@@ -128,6 +128,27 @@ Network-wide "collective memory" recording security incidents, malicious gene fi
 
 ---
 
+### Autonomy Levels — the Deployment Dial
+
+How much of the evolution loop runs without a human in the loop is not a fixed property of the protocol — it is a dial the deployer sets. The protocol classifies agent autonomy into five levels (named AL0–AL4; these are independent of the URAA layer numbers above):
+
+| Level | Name | Meaning |
+|---|---|---|
+| AL0 | Tool | Fully human-driven; no autonomous decisions |
+| AL1 | Reactive | Responds by preset rules; limited autonomous choice |
+| AL2 | Adaptive | Evolves its genome autonomously; **decisions that change machine or public state require human confirmation** |
+| AL3 | Autonomous | Runs and evolves independently; humans retain override |
+| AL4 | Self-Directed | Sets its own goals and participates in governance; humans retain emergency intervention |
+
+Three rules make the dial trustworthy:
+
+- The level is set by the deployer and moves one step at a time; whether an agent is ready for a higher level is the deployer's assessment to make.
+- Moving up to Autonomous (AL3) or beyond requires explicit dual authorization; moving down can be done unilaterally by any privileged party — in an emergency, straight to Tool (AL0).
+- Every level change is recorded, with its reason and its authorization.
+
+The reference tooling operates at **Adaptive (AL2)**: ranking, evaluation and comparison run automatically; anything that changes your machine or public state — installing, publishing, overwriting, rolling back — waits for your approval. The boundary is a dial, not a wall.
+
+
 ## 4. Gene Standard (Summary)
 
 A **Gene** is the atomic unit of agent capability. Each gene has a **Phenotype** — a structured metadata declaration including:
