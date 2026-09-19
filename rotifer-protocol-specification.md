@@ -159,7 +159,7 @@ A **Gene** is the atomic unit of agent capability. Each gene has a **Phenotype**
 | `inputSchema` / `outputSchema` | Typed I/O schemas |
 | `fidelity` | `Native` (protocol-native) or `Wrapped` (adapted from external tool) |
 | `version` | Semantic version with dependency resolution |
-| `securityRequirements` | Resource limits, permission declarations |
+| `network` | Network access constraints for Hybrid genes: domain allowlist, timeout, rate limit |
 | `transparency` / `visibility` | How much internal logic is inspectable |
 
 Genes are organized into **Genomes** — ordered collections with a DataFlowGraph for orchestration.

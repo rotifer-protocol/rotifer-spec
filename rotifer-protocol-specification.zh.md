@@ -159,7 +159,7 @@ Rotifer Protocol 的应对之策：放弃"管理"的幻觉，构建"进化"的�
 | `inputSchema` / `outputSchema` | 类型化的输入/输出模式 |
 | `fidelity` | `Native`（协议原生）或 `Wrapped`（从外部工具适配） |
 | `version` | 语义化版本，带依赖解析 |
-| `securityRequirements` | 资源限制、权限声明 |
+| `network` | Hybrid 基因的网络访问约束：域名白名单、超时、限流 |
 | `transparency` / `visibility` | 内部逻辑的可审查程度 |
 
 Gene 被组织为 **Genome**——带有 DataFlowGraph 用于编排的有序集合。
