@@ -171,7 +171,7 @@ Genes are organized into **Genomes** — ordered collections with a DataFlowGrap
 Every gene is continuously evaluated by a **dual-metric fitness function** `F(g)` that combines performance, reliability, and efficiency into a single score. A separate safety validation score `V(g)` serves as a hard gate.
 
 - **Admission threshold:** `F(g) >= τ` AND `V(g) >= V_min`
-- **Default parameters (SHOULD):** τ = 0.3, V_min = 0.7
+- **Default parameters (SHOULD):** V_min = 0.7. The admission threshold τ is paused while it is recalibrated for the normalized [0, 1] range of `F(g)`.
 - **Diversity factor** prevents monoculture — frequency-dependent selection inspired by population genetics.
 
 ---
